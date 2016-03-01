@@ -1,0 +1,11 @@
+CMakeCache.txt
+CMakeFiles
+MakeFile
+cmake_install.cmake
+
+*.swp
+*~
+.ycm_extra_conf.*
+
+/build
+/SCRATCH.md
