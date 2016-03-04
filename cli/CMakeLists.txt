@@ -4,6 +4,8 @@ find_package(JsonParser REQUIRED)
 
 add_executable(stream
   ./main.c
+  ./config.c
+  ./utils.c
 )
 
 include_directories(
