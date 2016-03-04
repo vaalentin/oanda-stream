@@ -3,6 +3,7 @@
 #include <stdbool.h>
 
 #include "db.h"
+#include "query.h"
 #include "config.h"
 #include "utils.h"
 
@@ -41,7 +42,15 @@ int main(int argc, char* argv[]) {
   db = db_open(config.db_name);
   db_create_tables(db);
 
+  // prepare query
+  char* instrs_query = query_get_instrs(config.instrs, config.n_instrs);
+  char* url = query_get_url(config.id, instrs_query);
+  char* auth_header = query_get_auth_header(config.tok);
+
   // clean
+  free(instrs_query);
+  free(url);
+  free(auth_header);
   config_delete(&config);
   db_close(db);
 
