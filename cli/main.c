@@ -2,8 +2,11 @@
 #include <stdio.h>
 #include <stdbool.h>
 
+#include "db.h"
 #include "config.h"
 #include "utils.h"
+
+sqlite3* db = NULL;
 
 int main(int argc, char* argv[]) {
   // config
@@ -34,8 +37,13 @@ int main(int argc, char* argv[]) {
     exit(EXIT_FAILURE);
   }
 
+  // db
+  db = db_open(config.db_name);
+  db_create_tables(db);
+
   // clean
   config_delete(&config);
+  db_close(db);
 
   return 0;
 }
