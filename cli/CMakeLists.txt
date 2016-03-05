@@ -5,6 +5,8 @@ find_package(JsonParser REQUIRED)
 add_executable(stream
   ./main.c
   ./query.c
+  ./tick.c
+  ./heartbeat.c
   ./db.c
   ./config.c
   ./utils.c
