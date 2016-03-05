@@ -14,8 +14,6 @@
 
 sqlite3* db = NULL;
 
-// ./stream -a 1295650 -t 65c33a8ac8ddaf45bb425e830064978c-89bb776328d0e4c884f829e185d33001 -i EUR_USD EUR_CHF
-
 size_t handle_chunk(void* buffer, size_t size, size_t nmemb, void* userp) {
   json_value* val = json_parse((json_char*) buffer, size * nmemb);
 
