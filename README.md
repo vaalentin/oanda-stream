@@ -22,10 +22,12 @@ Should returns something like:
 ```json
 {
   "accounts": [
-    "accountsId": 1234567,
-    "accountName": "Primary",
-    "accountCurrency": "EUR",
-    "marginRate": 0.02
+    {
+      "accountsId": 1234567,
+      "accountName": "Primary",
+      "accountCurrency": "EUR",
+      "marginRate": 0.02
+    }
   ]
 }
 ```
